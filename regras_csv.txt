@@ -1,0 +1,91 @@
+REGRAS PARA ADICIONAR NOVOS ARQUIVOS CSV NO SISTEMA
+==============================================
+
+1. ESTRUTURA DE PASTAS
+---------------------
+- Os arquivos devem estar dentro da pasta "SUPER LISTA"
+- Cada estado deve ter sua própria pasta (PR, SC, RS)
+Exemplo:
+SUPER LISTA/
+├── PR/
+│   ├── PR.csv
+│   ├── PR-2.csv
+│   └── PR-3.csv
+├── SC/
+│   ├── SC.csv
+│   └── SC-2.csv
+└── RS/
+    ├── RS.csv
+    └── RS-2.csv
+
+2. FORMATO DO ARQUIVO
+-------------------
+- Deve ser um arquivo CSV
+- Usar ponto e vírgula (;) como delimitador
+- Codificação: latin1
+- Todas as strings devem estar entre aspas (QUOTE_ALL)
+
+3. COLUNAS OBRIGATÓRIAS
+----------------------
+- CEP
+- NUM_LOGRADOURO
+- VIABILIDADE
+- LOGRADOURO
+- BAIRRO
+- MUNICIPIO
+- UF
+- COMPLEMENTO (opcional)
+
+4. REGRAS DE NOMENCLATURA
+-----------------------
+- O nome do arquivo deve começar com a sigla do estado
+- Para múltiplos arquivos do mesmo estado, use um hífen e um número
+- Exemplos: PR.csv, PR-2.csv, PR-3.csv
+
+5. REGRAS DE DADOS
+----------------
+- CEP deve estar sem hífen ou pontuação
+- Números devem estar em formato texto (string)
+- Evite espaços extras no início ou fim dos campos
+
+6. PROCESSO DE ATUALIZAÇÃO
+------------------------
+- Você pode adicionar novos arquivos a qualquer momento
+- O sistema carrega automaticamente todos os arquivos ao iniciar
+- Se houver registros duplicados (mesmo CEP e número), o sistema mantém o registro do arquivo mais recente
+- Não é necessário modificar o código ao adicionar novos arquivos
+
+7. BOAS PRÁTICAS
+--------------
+- Mantenha um padrão consistente em todos os arquivos
+- Faça backup dos arquivos antigos antes de adicionar novos
+- Verifique se os dados estão no formato correto antes de adicionar
+- Evite arquivos muito grandes (considere dividir em partes menores)
+
+8. LIMITAÇÕES
+-----------
+- O sistema só reconhece arquivos .csv
+- Só funciona para os estados PR, SC e RS
+- Os arquivos devem estar na pasta correta do seu estado
+
+9. VERIFICAÇÃO DE ERROS
+---------------------
+- Ao iniciar o sistema, ele mostra quantos registros foram carregados de cada arquivo
+- Se houver erro em um arquivo, o sistema continua carregando os outros
+- Erros são reportados no console durante a inicialização
+
+10. EXEMPLO DE USO
+----------------
+Para adicionar um novo arquivo do Paraná:
+1. Nomeie como PR-3.csv (supondo que já existe PR.csv e PR-2.csv)
+2. Coloque na pasta SUPER LISTA/PR/
+3. Reinicie o sistema
+4. O sistema automaticamente combinará com os dados existentes
+
+OBSERVAÇÕES IMPORTANTES
+---------------------
+- Mantenha uma cópia de backup dos arquivos originais
+- Teste os novos arquivos em um ambiente de desenvolvimento antes
+- Verifique se todos os campos obrigatórios estão presentes
+- Certifique-se de que a codificação do arquivo está correta
+- Em caso de dúvidas, consulte a documentação ou a equipe de desenvolvimento 
