@@ -1,7 +1,3 @@
-# Arquivos de dados
-SUPER LISTA/*.csv
-SUPER LISTA/**/*.csv
-
 # Ambiente virtual Python
 .venv/
 venv/
